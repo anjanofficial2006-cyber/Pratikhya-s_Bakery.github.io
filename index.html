@@ -25,7 +25,14 @@
     .cakes { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
     .cake { background:white; padding:20px; border-radius:20px; width:260px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
     .cake:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-    .cake img { width:100%; height:200px; background-color:#ffe6e1; border-radius:15px; margin-bottom:15px; }
+    ..cake img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;   /* keeps images nicely cropped */
+    border-radius: 15px;
+    margin-bottom: 15px;
+    background-color: #ffe6e1;
+    }
     .cake h3 { color:#ff6f61; margin-bottom:10px; font-size:22px; }
     .cake p { font-size:14px; color:#555; }
     .about { background: linear-gradient(135deg,#fff1f0,#ffe6e1); }
