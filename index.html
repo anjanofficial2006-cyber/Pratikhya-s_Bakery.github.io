@@ -4,50 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pratikhya's Bakery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Poppins', sans-serif; }
-    body { scroll-behavior: smooth; background: #fff; overflow-x: hidden; }
-    header { position: fixed; width: 100%; background: linear-gradient(90deg,#ff6f61,#ffd1c1); color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-    header h1 { font-family:'Pacifico', cursive; font-size:28px; }
-    nav a { color:white; text-decoration:none; margin-left:20px; font-weight:600; transition:0.3s; }
-    nav a:hover { color:#fff8f0; text-decoration:underline; }
-    section { padding:120px 50px 80px 50px; min-height:100vh; opacity:0; transform: translateY(50px); transition: all 1s ease-out; position:relative; z-index:1; }
-    section.visible { opacity:1; transform: translateY(0); }
-    .hero { background: linear-gradient(135deg,#ff9a9e,#fad0c4); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; overflow:hidden; }
-    .hero h2 { font-family:'Pacifico', cursive; font-size:56px; color:white; margin-bottom:20px; text-shadow:2px 2px 6px rgba(0,0,0,0.2); }
-    .hero p { font-size:22px; color:#fff; margin-bottom:30px; }
-    .hero a { background: linear-gradient(90deg,#ff6f61,#ffb347); color:white; padding:15px 40px; border-radius:50px; font-weight:700; text-decoration:none; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
-    .hero a:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
-    .menu { background: linear-gradient(135deg,#ffe6e1,#fff5e6); }
-    .menu h2 { color:#ff6f61; text-align:center; margin-bottom:50px; font-size:42px; }
-    .cakes { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-    .cake { background:white; padding:20px; border-radius:20px; width:260px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
-    .cake:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-    .cake img { 
-      width:100%; 
-      height:200px; 
-      object-fit:cover; 
-      background-color:#ffe6e1; 
-      border-radius:15px; 
-      margin-bottom:15px; 
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: #fff; scroll-behavior: smooth; overflow-x: hidden; }
+
+    /* Header */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: linear-gradient(90deg,#ff6f61,#ffd1c1);
+      color: white; padding: 15px 50px;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 1000;
     }
-    .cake h3 { color:#ff6f61; margin-bottom:10px; font-size:22px; }
-    .cake p { font-size:14px; color:#555; }
+    header h1 { font-family: 'Pacifico', cursive; font-size: 28px; }
+    nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; transition: 0.3s; }
+    nav a:hover { text-decoration: underline; color: #fff8f0; }
+
+    /* Sections */
+    section {
+      min-height: 100vh; padding: 120px 50px 80px;
+      opacity: 0; transform: translateY(50px);
+      transition: all 1s ease-out;
+    }
+    section.visible { opacity: 1; transform: translateY(0); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero h2 { font-family: 'Pacifico', cursive; font-size: 56px; color: white; margin-bottom: 20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.2); }
+    .hero p { font-size: 22px; color: white; margin-bottom: 30px; }
+    .hero a {
+      background: linear-gradient(90deg,#ff6f61,#ffb347);
+      color: white; padding: 15px 40px; border-radius: 50px;
+      font-weight: 700; text-decoration: none; transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .hero a:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+
+    /* Menu */
+    .menu { background: linear-gradient(135deg,#ffe6e1,#fff5e6); }
+    .menu h2 { color: #ff6f61; text-align: center; margin-bottom: 50px; font-size: 42px; }
+    .cakes { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .cake {
+      background: white; border-radius: 20px; width: 260px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center; padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cake:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    .cake img {
+      width: 100%; height: 200px; border-radius: 15px;
+      object-fit: cover; margin-bottom: 15px;
+    }
+    .cake h3 { color: #ff6f61; margin-bottom: 10px; font-size: 22px; }
+    .cake p { font-size: 14px; color: #555; }
+
+    /* About */
     .about { background: linear-gradient(135deg,#fff1f0,#ffe6e1); }
-    .about h2 { color:#ff6f61; text-align:center; margin-bottom:30px; font-size:42px; }
-    .about p { max-width:800px; margin:0 auto; text-align:center; font-size:18px; color:#333; }
+    .about h2 { color: #ff6f61; text-align: center; margin-bottom: 30px; font-size: 42px; }
+    .about p { max-width: 800px; margin: 0 auto; text-align: center; font-size: 18px; color: #333; }
+
+    /* Contact */
     .contact { background: linear-gradient(135deg,#fff5e6,#ffe6e1); }
-    .contact h2 { color:#ff6f61; text-align:center; margin-bottom:30px; font-size:42px; }
-    .contact p { text-align:center; font-size:20px; margin-bottom:20px; color:#333; }
-    .contact a { display:inline-block; background: linear-gradient(90deg,#25d366,#128c7e); color:white; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:700; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
-    .contact a:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
-    footer { text-align:center; padding:20px; background:#ff6f61; color:white; font-weight:600; }
-    @media(max-width:768px){ .cakes { flex-direction:column; align-items:center; } header { flex-direction:column; padding:15px; } nav { margin-top:10px; } .hero h2 { font-size:42px; } .hero p { font-size:18px; } .menu h2, .about h2, .contact h2 { font-size:32px; } }
-    /* Confetti animation */
-    .confetti { position:absolute; width:10px; height:10px; background: #fff; top:0; animation: fall linear infinite; opacity:0.8; border-radius:50%; }
-    @keyframes fall { 0% {transform: translateY(0) rotate(0deg);} 100% {transform: translateY(120vh) rotate(360deg);} }
+    .contact h2 { color: #ff6f61; text-align: center; margin-bottom: 30px; font-size: 42px; }
+    .contact p { text-align: center; font-size: 20px; margin-bottom: 20px; color: #333; }
+    .contact a {
+      display: inline-block; background: linear-gradient(90deg,#25d366,#128c7e);
+      color: white; padding: 12px 30px; border-radius: 50px;
+      text-decoration: none; font-weight: 700;
+      transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .contact a:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #ff6f61; color: white; font-weight: 600; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .cakes { flex-direction: column; align-items: center; }
+      header { flex-direction: column; padding: 15px; }
+      nav { margin-top: 10px; }
+      .hero h2 { font-size: 42px; }
+      .hero p { font-size: 18px; }
+      .menu h2, .about h2, .contact h2 { font-size: 32px; }
+    }
+
+    /* Confetti */
+    .confetti { position: absolute; border-radius: 50%; opacity: 0.8; animation: fall linear infinite; }
+    @keyframes fall { 0% { transform: translateY(0) rotate(0deg);} 100% { transform: translateY(120vh) rotate(360deg);} }
   </style>
 </head>
 <body>
@@ -72,17 +121,17 @@
   <h2>Our Cakes</h2>
   <div class="cakes">
     <div class="cake">
-      <img src="https://images.unsplash.com/photo-1606312616139-6c76c7c9e821?w=600&h=400&fit=crop" alt="Chocolate Cake">
+      <img src="https://images.unsplash.com/photo-1599785209794-273e4a86d956?w=600&h=400&fit=crop" alt="Chocolate Cake">
       <h3>Chocolate Cake</h3>
       <p>Rich and creamy chocolate delight. Price: ₹500</p>
     </div>
     <div class="cake">
-      <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=400&fit=crop" alt="Vanilla Cake">
+      <img src="https://images.unsplash.com/photo-1599785209338-c493d48fb6c8?w=600&h=400&fit=crop" alt="Vanilla Cake">
       <h3>Vanilla Cake</h3>
       <p>Soft and fluffy vanilla cake. Price: ₹450</p>
     </div>
     <div class="cake">
-      <img src="https://images.unsplash.com/photo-1609758004640-dc3a3f9a9a6e?w=600&h=400&fit=crop" alt="Red Velvet Cake">
+      <img src="https://images.unsplash.com/photo-1602416018881-6a32b6c8c7ef?w=600&h=400&fit=crop" alt="Red Velvet Cake">
       <h3>Red Velvet</h3>
       <p>Classic red velvet cake. Price: ₹600</p>
     </div>
@@ -106,6 +155,33 @@
 </footer>
 
 <script>
+  // Scroll reveal
+  const sections = document.querySelectorAll('section');
+  const revealSection = () => {
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) section.classList.add('visible');
+    });
+  };
+  window.addEventListener('scroll', revealSection);
+  window.addEventListener('load', revealSection);
+
+  // Confetti
+  const hero = document.querySelector('.hero');
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.width = confetti.style.height = (5 + Math.random() * 10) + 'px';
+    confetti.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
+    confetti.style.animationDuration = (3 + Math.random() * 3) + 's';
+    confetti.style.animationDelay = Math.random() * 5 + 's';
+    hero.appendChild(confetti);
+  }
+</script>
+
+</body>
+</html><script>
   // Scroll animations
   const sections = document.querySelectorAll('section');
   const revealSection = () => {
