@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pratikhya's Bakery</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratikhya's Bakery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
     * { box-sizing: border-box; margin:0; padding:0; font-family: 'Poppins', sans-serif; }
     body { scroll-behavior: smooth; background: #fff; overflow-x: hidden; }
     header { position: fixed; width: 100%; background: linear-gradient(90deg,#ff6f61,#ffd1c1); color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
@@ -25,13 +25,13 @@
     .cakes { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
     .cake { background:white; padding:20px; border-radius:20px; width:260px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
     .cake:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-    .cake img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;   /* keeps images nicely cropped */
-    border-radius: 15px;
-    margin-bottom: 15px;
-    background-color: #ffe6e1;
+    .cake img { 
+      width:100%; 
+      height:200px; 
+      object-fit:cover; 
+      background-color:#ffe6e1; 
+      border-radius:15px; 
+      margin-bottom:15px; 
     }
     .cake h3 { color:#ff6f61; margin-bottom:10px; font-size:22px; }
     .cake p { font-size:14px; color:#555; }
@@ -48,69 +48,87 @@
     /* Confetti animation */
     .confetti { position:absolute; width:10px; height:10px; background: #fff; top:0; animation: fall linear infinite; opacity:0.8; border-radius:50%; }
     @keyframes fall { 0% {transform: translateY(0) rotate(0deg);} 100% {transform: translateY(120vh) rotate(360deg);} }
-</style>
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Pratikhya's Bakery</h1>
-    <nav>
-        <a href="#hero">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <h1>Pratikhya's Bakery</h1>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
+<section class="hero" id="hero">
+  <h2>Welcome to Pratikhya's Bakery</h2>
+  <p>Delicious cakes made with love!</p>
+  <a href="https://wa.me/918638706900" target="_blank">Chat on WhatsApp</a>
+</section>
+
 <section class="menu" id="menu">
-    <h2>Our Cakes</h2>
-    <div class="cakes">
-        <div class="cake">
-            <img src="https://images.unsplash.com/photo-1606312616139-6c76c7c9e821?w=600&h=400&fit=crop" alt="Chocolate Cake">
-            <h3>Chocolate Cake</h3>
-            <p>Rich and creamy chocolate delight. Price: ₹500</p>
-        </div>
-        <div class="cake">
-            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=400&fit=crop" alt="Vanilla Cake">
-            <h3>Vanilla Cake</h3>
-            <p>Soft and fluffy vanilla cake. Price: ₹450</p>
-        </div>
-        <div class="cake">
-            <img src="https://images.unsplash.com/photo-1609758004640-dc3a3f9a9a6e?w=600&h=400&fit=crop" alt="Red Velvet Cake">
-            <h3>Red Velvet</h3>
-            <p>Classic red velvet cake. Price: ₹600</p>
-        </div>
+  <h2>Our Cakes</h2>
+  <div class="cakes">
+    <div class="cake">
+      <img src="https://images.unsplash.com/photo-1606312616139-6c76c7c9e821?w=600&h=400&fit=crop" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>Rich and creamy chocolate delight. Price: ₹500</p>
     </div>
+    <div class="cake">
+      <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=400&fit=crop" alt="Vanilla Cake">
+      <h3>Vanilla Cake</h3>
+      <p>Soft and fluffy vanilla cake. Price: ₹450</p>
+    </div>
+    <div class="cake">
+      <img src="https://images.unsplash.com/photo-1609758004640-dc3a3f9a9a6e?w=600&h=400&fit=crop" alt="Red Velvet Cake">
+      <h3>Red Velvet</h3>
+      <p>Classic red velvet cake. Price: ₹600</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>Hello! I’m Pratikhya Goswami, the heart behind Pratikhya's Bakery. We specialize in making fresh, beautiful cakes for every occasion. Our passion is to bring sweetness and joy to every celebration.</p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: 86387 06900</p>
+  <p>WhatsApp: 86387 06900</p>
+  <a href="https://wa.me/918638706900" target="_blank">Chat on WhatsApp</a>
 </section>
 
 <footer>
-    &copy; 2025 Pratikhya's Bakery. All rights reserved.
+  &copy; 2025 Pratikhya's Bakery. All rights reserved.
 </footer>
 
 <script>
-    // Scroll animations
-    const sections = document.querySelectorAll('section');
-    const revealSection = () => {
-        sections.forEach(section => {
-            const top = section.getBoundingClientRect().top;
-            if(top < window.innerHeight - 100){ section.classList.add('visible'); }
-        });
-    }
-    window.addEventListener('scroll', revealSection);
-    window.addEventListener('load', revealSection);
+  // Scroll animations
+  const sections = document.querySelectorAll('section');
+  const revealSection = () => {
+      sections.forEach(section => {
+          const top = section.getBoundingClientRect().top;
+          if(top < window.innerHeight - 100){ section.classList.add('visible'); }
+      });
+  }
+  window.addEventListener('scroll', revealSection);
+  window.addEventListener('load', revealSection);
 
-    // Confetti generation
-    const hero = document.querySelector('.hero');
-    for(let i=0;i<50;i++){
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = Math.random()*100 + 'vw';
-        confetti.style.width = confetti.style.height = (5+Math.random()*10) + 'px';
-        confetti.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
-        confetti.style.animationDuration = (3+Math.random()*3) + 's';
-        confetti.style.animationDelay = Math.random()*5 + 's';
-        hero.appendChild(confetti);
-    }
+  // Confetti generation
+  const hero = document.querySelector('.hero');
+  for(let i=0;i<50;i++){
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random()*100 + 'vw';
+      confetti.style.width = confetti.style.height = (5+Math.random()*10) + 'px';
+      confetti.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
+      confetti.style.animationDuration = (3+Math.random()*3) + 's';
+      confetti.style.animationDelay = Math.random()*5 + 's';
+      hero.appendChild(confetti);
+  }
 </script>
 
 </body>
