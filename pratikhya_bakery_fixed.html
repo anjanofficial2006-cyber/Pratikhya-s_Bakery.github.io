@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Pratikhya's Bakery — handmade cakes for every celebration. Order via WhatsApp." />
+  <title>Pratikhya's Bakery</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-1: #ff6f61;
+      --accent-2: #ffd1c1;
+      --card-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      --header-height: 72px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 10px); }
+    body { background: #fff; color: #222; -webkit-font-smoothing:antialiased; }
+
+    /* Header */
+    header {
+      position: fixed; inset: 0 0 auto 0; height: var(--header-height);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 28px;
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      color: white; z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+    header h1 { font-family: 'Pacifico', cursive; font-size: 22px; line-height:1; }
+    nav { display:flex; gap:16px; }
+    nav a { color: white; text-decoration: none; font-weight:600; padding:6px 8px; border-radius:6px; }
+    nav a:focus, nav a:hover { background: rgba(255,255,255,0.08); outline: none; }
+
+    main { margin-top: var(--header-height); }
+
+    section {
+      min-height: calc(100vh - var(--header-height));
+      padding: 48px 28px;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    section.visible { opacity:1; transform: translateY(0); }
+
+    /* Hero */
+    .hero {
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:64px 18px; background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+      color: white;
+    }
+    .hero h2 { font-family: 'Pacifico', cursive; font-size: 42px; margin-bottom: 12px; text-shadow: 0 2px 6px rgba(0,0,0,0.18); }
+    .hero p { font-size:18px; margin-bottom:18px; }
+    .cta { display:inline-block; background: linear-gradient(90deg,#ff6f61,#ffb347); color:white; padding:12px 20px; border-radius:999px; text-decoration:none; font-weight:700; }
+
+    /* Menu */
+    .menu { background: linear-gradient(135deg,#fff5f2,#fffaf7); }
+    .menu h2 { color: var(--accent-1); text-align:center; font-size:34px; margin-bottom:26px; }
+    .cakes { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:22px; max-width:1100px; margin: 0 auto; padding: 0 16px; }
+    .cake {
+      background: white; border-radius:14px; padding:14px; box-shadow: var(--card-shadow); text-align:center;
+      display:flex; flex-direction:column; gap:10px; align-items:stretch;
+    }
+    .cake img { width:100%; height:180px; border-radius:10px; object-fit:cover; display:block; }
+    .cake h3 { color: var(--accent-1); font-size:18px; margin-top:6px; }
+    .cake p { color:#555; font-size:14px; }
+
+    /* About / Contact */
+    .about, .contact { padding-bottom:60px; }
+    .about h2, .contact h2 { color: var(--accent-1); text-align:center; font-size:30px; margin-bottom:18px; }
+    .about p { max-width:840px; margin:0 auto; text-align:center; color:#333; line-height:1.6; }
+    .contact .links { display:flex; gap:12px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
+    .btn-phone { background: #fff; color: var(--accent-1); padding:10px 16px; border-radius:999px; text-decoration:none; font-weight:700; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+    footer { text-align:center; padding:18px; background: var(--accent-1); color:white; font-weight:600; }
+
+    /* Responsive tweaks */
+    @media (max-width:700px) {
+      header { padding:12px 16px; }
+      .hero h2 { font-size:34px; }
+      .hero p { font-size:16px; }
+      .cake img { height:160px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pratikhya's Bakery</h1>
+  <nav aria-label="Main navigation">
+    <a href="#hero">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <h2 id="hero-heading">Welcome to Pratikhya's Bakery</h2>
+    <p>Fresh, handmade cakes for every occasion — ordered easily via WhatsApp.</p>
+    <a class="cta" href="https://wa.me/918638706900" target="_blank" rel="noopener" aria-label="Chat with Pratikhya on WhatsApp">Chat on WhatsApp</a>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-heading">
+    <h2 id="menu-heading">Our Cakes</h2>
+    <div class="cakes">
+
+      <!-- Chocolate Cake -->
+      <article class="cake" aria-label="Chocolate Cake">
+        <picture>
+          <!-- Unsplash dynamic queries (reliable), followed by a small local svg fallback via onerror -->
+          <source srcset="https://source.unsplash.com/900x600/?chocolate-cake" type="image/jpeg">
+          <img
+            src="https://source.unsplash.com/900x600/?chocolate-cake"
+            alt="Chocolate layered cake with ganache"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27900%27 height=%27600%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23f7e7e6%27/><text x=%2750%25%27 y=%2750%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-size=%2730%27 fill=%27%23888%27>Chocolate Cake image unavailable</text></svg>';">
+        </picture>
+        <h3>Chocolate Cake</h3>
+        <p>Rich chocolate sponge, chocolate ganache and berries. Price: ₹500</p>
+      </article>
+
+      <!-- Vanilla Cake -->
+      <article class="cake" aria-label="Vanilla Cake">
+        <picture>
+          <source srcset="https://source.unsplash.com/900x600/?vanilla-cake" type="image/jpeg">
+          <img
+            src="https://source.unsplash.com/900x600/?vanilla-cake"
+            alt="Vanilla celebration cake with cream"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27900%27 height=%27600%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23f7f7f9%27/><text x=%2750%25%27 y=%2750%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-size=%2730%27 fill=%27%23888%27>Vanilla Cake image unavailable</text></svg>';">
+        </picture>
+        <h3>Vanilla Cake</h3>
+        <p>Light vanilla sponge, buttercream frosting. Price: ₹450</p>
+      </article>
+
+      <!-- Red Velvet Cake -->
+      <article class="cake" aria-label="Red Velvet Cake">
+        <picture>
+          <source srcset="https://source.unsplash.com/900x600/?red-velvet-cake" type="image/jpeg">
+          <img
+            src="https://source.unsplash.com/900x600/?red-velvet-cake"
+            alt="Red velvet cake slice with cream cheese frosting"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27900%27 height=%27600%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23fff1f2%27/><text x=%2750%25%27 y=%2750%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-size=%2730%27 fill=%27%23888%27>Red Velvet image unavailable</text></svg>';">
+        </picture>
+        <h3>Red Velvet</h3>
+        <p>Classic red velvet with cream cheese frosting. Price: ₹600</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Us</h2>
+    <p>Hello! I’m Pratikhya Goswami — the baker behind each cake. We bake fresh daily, use quality ingredients, and love bringing smiles to celebrations. Orders are accepted via WhatsApp or phone; pickup and local delivery available.</p>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+    <p style="text-align:center;">Phone: <a class="btn-phone" href="tel:+918638706900">+91 86387 06900</a></p>
+    <div class="links">
+      <a class="cta" href="https://wa.me/918638706900" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">Chat on WhatsApp</a>
+      <a class="btn-phone" href="mailto:hello@example.com">Email: hello@example.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Pratikhya's Bakery. All rights reserved.
+</footer>
+
+<script>
+  // Smooth reveal for sections
+  function revealOnScroll() {
+    const sections = document.querySelectorAll('main section');
+    const trigger = window.innerHeight * 0.85;
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < trigger) sec.classList.add('visible');
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('resize', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+  document.addEventListener('DOMContentLoaded', revealOnScroll);
+
+  // Correct header-offset anchor scrolling for browsers that don't respect scroll-padding-top
+  document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const id = this.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (!el) return;
+      const headerHeight = document.querySelector('header').offsetHeight || 72;
+      const rectTop = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: rectTop - headerHeight - 10, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
